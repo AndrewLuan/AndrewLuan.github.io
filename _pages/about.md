@@ -9,9 +9,9 @@ redirect_from:
 
 ## About Me
 
-I am an undergraduate student at the **University of Science and Technology of China (USTC)**, School of the Gifted Young, majoring in Computer Science (GPA: 4.13/4.3, Ranking: 1/46). I am currently visiting the **University of Hong Kong (HKU)** as a **Fung Scholar** (Jan–May 2026), a fellowship awarded by the Victor and William Fung Foundation.
+I am an undergraduate student at the **University of Science and Technology of China (USTC)**, School of the Gifted Young, majoring in Artificial Intelligence and Data Science. I am currently visiting the **University of Hong Kong (HKU)** as a **Fung Scholar** (Jan–May 2026), a fellowship awarded by the Victor and William Fung Foundation.
 
-My research is primarily conducted at the **Lab for Data Science, USTC**, where I work on benchmarking and evaluating the reasoning capabilities of large language models. I am broadly interested in how LLMs reason about structured scientific problems and how to measure that reasoning faithfully.
+My research is primarily conducted at the **Lab for Data Science(LDS), USTC**, where I work on benchmarking and evaluating the reasoning capabilities of large language models. I am broadly interested in how LLMs reason about structured scientific problems and how to measure that reasoning faithfully.
 
 ---
 
