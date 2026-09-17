@@ -1,10 +1,9 @@
 /*
-* Greedy Navigation
-*
-* http://codepen.io/lukejacksonn/pen/PwmwWV
-*
-*/
-
+ * 功能：根据可用宽度将导航项移入折叠菜单，依赖打包入口中的 jQuery 与 masthead.html。
+ * updateNav 保留站点名称、主题切换和链接顺序，同时写入实际导航高度供响应式样式使用。
+ * 在窗口变化、字体加载及导航尺寸变化时重算，不依赖 Screen Orientation API。
+ * 所有状态仅保存在 DOM 和内存中；不修改用户数据。
+ */
 var $nav = $('#site-nav');
 var $btn = $('#site-nav button');
 var $vlinks = $('#site-nav .visible-links');
@@ -58,14 +57,8 @@ function updateNav() {
   // Keep counter updated
   $btn.attr("count", breaks.length);
 
-  // update masthead height and the body/sidebar top padding
-  var mastheadHeight = $('.masthead').height();
-  $('body').css('padding-top', mastheadHeight + 'px');
-  if ($(".author__urls-wrapper button").is(":visible")) {
-    $(".sidebar").css("padding-top", "");
-  } else {
-    $(".sidebar").css("padding-top", mastheadHeight + "px");
-  }
+  document.documentElement.style.setProperty('--masthead-height', $('.masthead').outerHeight() + 'px');
+  $btn.attr({'aria-label': 'Toggle navigation', 'aria-expanded': !$hlinks.hasClass('hidden')});
 
 }
 
@@ -74,13 +67,18 @@ function updateNav() {
 $(window).on('resize', function () {
   updateNav();
 });
-screen.orientation.addEventListener("change", function () {
-  updateNav();
-});
+$(window).on('load', updateNav);
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(updateNav);
+}
+if (window.ResizeObserver) {
+  new ResizeObserver(updateNav).observe(document.querySelector('.masthead'));
+}
 
 $btn.on('click', function () {
   $hlinks.toggleClass('hidden');
   $(this).toggleClass('close');
+  $(this).attr('aria-expanded', !$hlinks.hasClass('hidden'));
 });
 
 updateNav();

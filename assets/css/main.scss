@@ -2,6 +2,8 @@
 ---
 
 /*
+ * 功能：Jekyll 样式入口，按依赖顺序载入主题、布局和组件。
+ * 最后载入 layout/responsive，统一正文与侧栏断点及移动端菜单布局。
  * This file controls what is imported from /_sass
  *
  * Note that the files are processed in the order they are imported, so they are partly
@@ -39,5 +41,6 @@
 
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands"
+    "vendor/font-awesome/brands",
+    "layout/responsive"
 ;

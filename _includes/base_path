@@ -1,4 +1,11 @@
-{% if site.url %}
+{% comment %}
+功能：为 head、导航和资源引用统一生成前缀。
+本地 development 使用相对站点路径，使 localhost、127.0.0.1 和局域网访问保持同源；
+GitHub Pages production 保留 site.url/site.baseurl 和 site.github.url 回退行为。
+{% endcomment %}
+{% if jekyll.environment == 'development' %}
+  {% assign base_path = site.baseurl | default: '' %}
+{% elsif site.url %}
   {% assign base_path = site.url | append: site.baseurl %}
 {% else %}
   {% assign base_path = site.github.url %}

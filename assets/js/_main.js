@@ -1,3 +1,9 @@
+/*
+ * 功能：页面交互入口，依赖 jQuery、FitVids、Smooth Scroll 与 theme.js，打包至 main.min.js。
+ * 主题函数读取浏览器偏好和 localStorage；Plotly 入口渲染标记代码块。
+ * ready 回调初始化页脚、Follow 菜单与滚动行为；断点切换时清除菜单的内联显示状态，
+ * 使 _responsive.scss 接管桌面与手机布局，避免从桌面缩小后菜单仍强制展开。
+ */
 /* ==========================================================================
    Various functions that we want to use within the template
    ========================================================================== */
@@ -127,12 +133,17 @@ $(document).ready(function () {
     $(".author__urls-wrapper button").toggleClass("open");
   });
 
-  // Restore the follow menu if toggled on a window resize
-  jQuery(window).on('resize', function () {
-    if ($('.author__urls.social-icons').css('display') == 'none' && $(window).width() >= scssLarge) {
-      $(".author__urls").css('display', 'block')
-    }
-  });
+  // 跨越布局断点时交还 CSS 控制，清除 fadeToggle 写入的 display。
+  var profileDesktop = window.matchMedia('(min-width: ' + scssLarge + 'px)');
+  var resetProfileMenu = function () {
+    $(".author__urls").stop(true, true).css('display', '');
+    $(".author__urls-wrapper button").removeClass('open');
+  };
+  if (profileDesktop.addEventListener) {
+    profileDesktop.addEventListener('change', resetProfileMenu);
+  } else {
+    profileDesktop.addListener(resetProfileMenu);
+  }
 
   // Init smooth scroll, this needs to be slightly more than then fixed masthead height
   $("a").smoothScroll({

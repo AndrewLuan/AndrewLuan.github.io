@@ -1,6 +1,9 @@
-/* ==========================================================================
-   SHARED THEME SETTINGS
-   ========================================================================== */
+/*
+ * 功能：定义各主题共用的字体、字号、断点和网格变量，由 assets/css/main.scss 首先载入。
+ * $sans-serif 为正文、标题、导航、侧栏和表单提供 Optima 优先的字体栈，图注使用同一字体；
+ * 未安装 Optima 的设备依次回退到系统字体，代码块仍使用 $monospace 等宽字体。
+ * 其余变量供主题和布局 SCSS 在编译时引用，不加载外部字体或改变页面内容。
+ */
 
 /* ==========================================================================
    TYPOGRAPHY
@@ -15,7 +18,7 @@ $indent-var                 : 1.3em;
 
 /* System typefaces */
 $serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$sans-serif                 : Optima, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */
@@ -41,7 +44,7 @@ $type-size-8                : 0.625em;  // ~10px
 
 $global-font-family         : $sans-serif;
 $header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
+$caption-font-family        : $sans-serif;
 
 /* ==========================================================================
    Breakpoints

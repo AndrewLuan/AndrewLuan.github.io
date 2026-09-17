@@ -1,0 +1,103 @@
+/*
+ * 功能：修正 Academic Pages 跨设备布局，由 assets/css/main.scss 最后载入。
+ * #main 使用同一个 $large 断点分配侧栏和正文，替代旧浮动、固定定位和重复缩进。
+ * 导航脚本维护 --masthead-height；侧栏以实际导航高度限制滚动区，避免底部不可达。
+ * 小屏资料区采用网格，Follow 列表在文档流中展开；长文本和宽表格不撑破页面。
+ */
+:root { --masthead-height: #{$masthead-height}; }
+html { scroll-padding-top: calc(var(--masthead-height) + 1rem); }
+body { padding-top: var(--masthead-height); }
+
+#main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  width: 100%;
+
+  &::before, &::after { display: none; }
+
+  > .page, > .archive, > .sidebar {
+    float: none;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  > .sidebar {
+    position: static;
+    height: auto;
+    transform: none;
+    overflow: visible;
+  }
+
+  @include breakpoint($large) {
+    grid-template-columns: minmax(0, 250px) minmax(0, 1fr);
+    align-items: start;
+
+    > .page, > .archive { grid-column: 2; }
+    > .sidebar {
+      position: sticky;
+      top: calc(var(--masthead-height) + 1rem);
+      max-height: calc(100vh - var(--masthead-height) - 2rem);
+      max-height: calc(100dvh - var(--masthead-height) - 2rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+    > .page:first-child, > .archive:first-child { grid-column: 1 / -1; }
+    .author__desktop { display: block; }
+  }
+}
+
+.page, .archive, .sidebar { overflow-wrap: anywhere; }
+.page__title { line-height: 1.2; }
+.page__content table { max-width: 100%; }
+.page__content iframe { max-width: 100%; }
+
+.greedy-nav {
+  min-width: 0;
+  .hidden-links {
+    max-width: 100%;
+    max-height: calc(100vh - var(--masthead-height) - 1rem);
+    max-height: calc(100dvh - var(--masthead-height) - 1rem);
+    overflow-y: auto;
+    li { white-space: normal; overflow-wrap: anywhere; }
+  }
+}
+
+@media (max-width: ($large - 1px)) {
+  .page__content table { display: block; width: fit-content; overflow-x: auto; }
+  .sidebar > [itemscope] {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+  .author__avatar { display: block; width: 64px; }
+  .author__content { display: block; padding: 0; min-width: 0; }
+  .author__urls-wrapper { display: block; grid-column: 1 / -1; }
+  .author__urls {
+    position: static;
+    margin-top: 0.75rem;
+    max-width: 100%;
+    z-index: auto;
+    box-shadow: none;
+    &::before, &::after { display: none; }
+  }
+}
+
+@media (max-width: 480px) {
+  .masthead__menu-item--lg { padding-right: 0; }
+  .greedy-nav .visible-links > li:first-child a {
+    max-width: calc(100vw - 8rem);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    margin-right: 0.5rem;
+  }
+  .greedy-nav #theme-toggle a { margin-left: 0.5rem; }
+}
+
+@media print {
+  body { padding-top: 0; }
+  #main > .sidebar { position: static; max-height: none; overflow: visible; }
+}
