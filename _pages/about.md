@@ -26,6 +26,12 @@ My research is primarily conducted at the **Lab for Data Science(LDS), USTC**, w
 
 ## Selected Publications
 
+**SpectraExpert: Expert-Like Reasoning Agent for Spectrum-Based Molecular Identification**  
+Denghong Luan, Zaifan Lu, Wenjie Wang, Jun Jiang, Wei Hu  
+*Submitted to ICDM 2026*
+
+[Details](/publication/2026-spectraexpert)
+
 **PPRBench: A Process-level Benchmark for LLMs' Physical Reasoning**
 Denghong Luan, Wentao Shi, Wenjie Wang, Xiangnan He
 *Submitted to SIGIR 2026 (Resource Track), under review*
