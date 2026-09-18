@@ -7,6 +7,10 @@ author_profile: true
 
 ## Projects
 
+### [Kaguya](https://github.com/posanbu/Kaguya)
+
+Developing a TypeScript AI bot runtime organized around persistent Information Atoms. Kaguya records messages, model lifecycles, assistant responses, and delivery outcomes as immutable facts connected through an explicit information DAG.
+
 ### [PPRBench: A Process-level Benchmark for LLMs' Physical Reasoning](/publication/2026-pprbench)
 
 Developing a contamination-free benchmark for evaluating the process-level physical reasoning of large language models, together with PhysGrader, a rubric-guided framework for step-by-step evaluation.
