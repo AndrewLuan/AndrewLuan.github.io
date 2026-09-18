@@ -1,3 +1,10 @@
+<!--
+  功能概述：渲染站点左侧作者资料栏，包括头像、身份信息、学术主页、代码仓库与社交媒体链接。
+  主要职责：根据当前页面指定的作者或站点默认 author 配置，按字段是否存在决定对应条目是否显示；本文件不修改数据。
+  代码库关系：由侧边栏模板 _includes/sidebar.html 引入，读取 _config.yml 的 site.author 或 _data/authors 中的页面作者数据，并使用 base_path 解析本地头像地址。
+  输入输出与副作用：输入为 Jekyll/Liquid 渲染上下文，输出带 schema.org Person 语义的 HTML；空字段不会生成链接，外部链接直接使用配置值。
+  本次配合点：Academic websites 区域支持 openreview 字段，使 _config.yml 中的 OpenReview 个人主页显示在 Google Scholar 之后。
+-->
 {% include base_path %}
 
 {% if page.author and site.data.authors[page.author] %}
@@ -46,6 +53,9 @@
       {% endif %}      
       {% if author.googlescholar %}
         <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar ai-fw icon-pad-right"></i>Google Scholar</a></li>
+      {% endif %}
+      {% if author.openreview %}
+        <li><a href="{{ author.openreview }}"><i class="fas fa-fw fa-comments icon-pad-right" aria-hidden="true"></i>OpenReview</a></li>
       {% endif %}
       {% if author.inspire-hep %}
         <li><a href="{{ author.inspire-hep }}"><i class="ai ai-inspire ai-fw icon-pad-right"></i>INSPIRE-HEP</a></li>
