@@ -27,14 +27,14 @@ My research is primarily conducted at the **Lab for Data Science(LDS), USTC**, w
 ## Selected Publications
 
 **SpectraExpert: Expert-Like Reasoning Agent for Spectrum-Based Molecular Identification**  
-Denghong Luan, Zaifan Lu, Wenjie Wang, Jun Jiang, Wei Hu  
-*Submitted to ICDM 2026*
+Denghong Luan, Zaifan Lu
+* Accepted by ICDM 2026*
 
 [Details](/publication/2026-spectraexpert)
 
 **PPRBench: A Process-level Benchmark for LLMs' Physical Reasoning**
-Denghong Luan, Wentao Shi, Wenjie Wang, Xiangnan He
-*Submitted to SIGIR 2026 (Resource Track), under review*
+Denghong Luan, Benjamin Tod Jones, Wentao Shi, Nachuan Chen, Junbo Huang, Wenjie Wang, Xiangnan He
+*Submitted to NAACL 2027, under review*
 
 **An Integrated Simulated Annealing Algorithm for WiFi-based Indoor Positioning**
 Denghong Luan, Yiheng Zhang, Chen Bin
@@ -46,6 +46,7 @@ Denghong Luan, Yiheng Zhang, Chen Bin
 
 | Date | Event |
 |------|-------|
+| Oct 2026 | Awarded the BYD Scholarship (比亚迪奖学金) |
 | Feb 2026 | Awarded the **Fung Scholarship** by the Victor and William Fung Foundation (HKU) |
 | Jan 2026 | Started exchange semester at the University of Hong Kong |
 | Nov 2025 | Awarded **China National Scholarship** (top 1%, Ministry of Education of China) |
