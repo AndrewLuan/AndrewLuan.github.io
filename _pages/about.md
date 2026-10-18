@@ -28,7 +28,7 @@ My research is primarily conducted at the **Lab for Data Science(LDS), USTC**, w
 
 **SpectraExpert: Expert-Like Reasoning Agent for Spectrum-Based Molecular Identification**  
 Denghong Luan, Zaifan Lu
-* Accepted by ICDM 2026*
+* Accepted by ICDM 2026 *
 
 [Details](/publication/2026-spectraexpert)
 
