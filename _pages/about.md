@@ -47,6 +47,7 @@ Denghong Luan, Yiheng Zhang, Chen Bin
 | Date | Event |
 |------|-------|
 | Oct 2026 | Awarded the BYD Scholarship (比亚迪奖学金) |
+| Aug 2026 | Started remote internship at MIT CSAIL |
 | Feb 2026 | Awarded the **Fung Scholarship** by the Victor and William Fung Foundation (HKU) |
 | Jan 2026 | Started exchange semester at the University of Hong Kong |
 | Nov 2025 | Awarded **China National Scholarship** (top 1%, Ministry of Education of China) |
