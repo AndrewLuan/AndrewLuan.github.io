@@ -1,0 +1,12 @@
+{% comment %}
+功能概述：为博客文章输出可放大查看的图版；网页预览为 WebP，点击后读取原始分辨率照片。
+主要职责：根据 include.file、caption、width、height 创建图片及图注，预留比例并延迟加载。
+代码库关系：由计算尺文章调用；文件位于 images/blog/hemmi-153，图版的纸墨处理由 blog.css 完成。
+输入输出：所有可见文字均经转义；相对链接经过 relative_url，兼容子路径部署，不改写源图片。
+{% endcomment %}
+<figure>
+  <a href="{{ '/images/blog/hemmi-153/' | append: include.file | append: '.jpg' | relative_url }}" aria-label="{{ include.caption | escape }}，查看原图">
+    <img src="{{ '/images/blog/hemmi-153/' | append: include.file | append: '.webp' | relative_url }}" alt="{{ include.caption | escape }}" width="{{ include.width }}" height="{{ include.height }}" loading="lazy" decoding="async">
+  </a>
+  <figcaption><span>{{ include.caption | escape }}</span><a href="{{ '/images/blog/hemmi-153/' | append: include.file | append: '.jpg' | relative_url }}">查看原图</a></figcaption>
+</figure>

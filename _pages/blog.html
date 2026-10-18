@@ -1,0 +1,44 @@
+---
+layout: blog
+title: Blog
+lang: zh-CN
+permalink: /blog/
+description: Denghong Luan 的博客与笔记。
+---
+{% comment %}
+功能概述：博客目录页，按年份倒序列出明确标有 blog:true 的文章。
+主要职责：展示日期、标题、摘要和阅读入口；无文章时显示空状态，旧模板示例不进入目录。
+代码库关系：使用 blog.html 的独立样式，读取 site.posts；每篇文章使用 blog-post 布局和 /blog/ 日期路由。
+输入输出：由 Jekyll 构建静态列表，年份与文章数自动随内容更新，不依赖浏览器脚本。
+{% endcomment %}
+<header class="blog-titleblock blog-index-title">
+  <h1>Blog</h1>
+  {% include blog-ornament.svg %}
+  <p class="blog-byline">{{ site.author.name | escape }}</p>
+</header>
+{% assign blog_posts = site.posts | where: 'blog', true %}
+<div class="blog-index">
+  {% assign last_year = '' %}
+  {% for post in blog_posts %}
+    {% assign year = post.date | date: '%Y' %}
+    {% if year != last_year %}
+      {% unless forloop.first %}</div></section>{% endunless %}
+      <section class="blog-year-group" aria-labelledby="year-{{ year }}">
+        <h2 id="year-{{ year }}" class="blog-year">{{ year }}</h2>
+        <div class="blog-entries">
+      {% assign last_year = year %}
+    {% endif %}
+    <article class="blog-entry">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time>
+      <div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        {% if post.subtitle %}<p class="blog-entry-subtitle">{{ post.subtitle | escape }}</p>{% endif %}
+        <p class="blog-entry-excerpt">{{ post.description | default: post.excerpt | strip_html }}</p>
+        <a class="blog-read-link" href="{{ post.url | relative_url }}">阅读全文</a>
+      </div>
+    </article>
+    {% if forloop.last %}</div></section>{% endif %}
+  {% else %}
+    <p class="blog-empty">暂无文章。</p>
+  {% endfor %}
+</div>

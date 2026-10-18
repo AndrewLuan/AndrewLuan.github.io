@@ -1,0 +1,50 @@
+---
+layout: blog
+---
+{% comment %}
+功能概述：将博客 Markdown 包装为带边栏目录的文章；不改变旧模板示例文章的布局。
+主要职责：输出标题、发表时间、自动章节目录和正文；通过 blog:true 筛选相邻文章，避免串入旧模板示例。
+代码库关系：显式使用此布局的 _posts 文章进入独立博客；依赖 blog.html 与 blog.css，目录由 Kramdown 的 h2 标题生成。
+输入输出：接收 title、subtitle、date、lang、content；纯 Liquid 构建目录，禁用脚本时也能跳转阅读。
+{% endcomment %}
+<article class="blog-article">
+  <header class="blog-titleblock">
+    <a class="blog-back" href="{{ '/blog/' | relative_url }}">返回博客目录</a>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.subtitle %}<p class="blog-subtitle">{{ page.subtitle | escape }}</p>{% endif %}
+    {% include blog-ornament.svg %}
+    <p class="blog-byline">{{ site.author.name | escape }}<span aria-hidden="true"> · </span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></p>
+  </header>
+  <div class="blog-reading-layout">
+    {% assign sections = content | split: '<h2 id="' %}
+    {% if sections.size > 1 %}
+    <aside class="blog-margin">
+      <details class="blog-toc" open>
+        <summary>本文目录</summary>
+        <nav aria-label="本文目录">
+          <ol>
+            {% for section in sections offset: 1 %}
+              {% assign section_id = section | split: '"' | first %}
+              {% assign section_title = section | split: '</h2>' | first | split: '">' | last | strip_html %}
+              <li><a href="#{{ section_id | escape }}">{{ section_title }}</a></li>
+            {% endfor %}
+          </ol>
+        </nav>
+      </details>
+    </aside>
+    {% endif %}
+    <div class="blog-prose" lang="{{ page.lang | default: 'en' }}">{{ content }}</div>
+  </div>
+  <div class="blog-endmark" aria-hidden="true">{% include blog-ornament.svg %}</div>
+  {% assign blog_posts = site.posts | where: 'blog', true %}
+  {% for post in blog_posts %}
+    {% if post.url == page.url %}
+      {% assign next_index = forloop.index0 | minus: 1 %}
+      {% assign previous_index = forloop.index0 | plus: 1 %}
+      <nav class="blog-post-navigation" aria-label="文章导航">
+        {% if next_index >= 0 %}<a href="{{ blog_posts[next_index].url | relative_url }}">较新文章：{{ blog_posts[next_index].title | escape }}</a>{% endif %}
+        {% if previous_index < blog_posts.size %}<a href="{{ blog_posts[previous_index].url | relative_url }}">较早文章：{{ blog_posts[previous_index].title | escape }}</a>{% endif %}
+      </nav>
+    {% endif %}
+  {% endfor %}
+</article>

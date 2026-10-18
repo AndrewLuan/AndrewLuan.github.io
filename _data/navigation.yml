@@ -9,3 +9,6 @@ main:
 
   - title: "Activities"
     url: /activities/
+
+  - title: "Blog"
+    url: /blog/

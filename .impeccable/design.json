@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T06:42:43.150870+00:00",
+  "title": "Design System: Academic CV — Blog",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "暖纸",
+        "tonalRamp": [
+          "oklch(15.00% 0.02101 79.09)",
+          "oklch(26.43% 0.02101 79.09)",
+          "oklch(37.86% 0.02101 79.09)",
+          "oklch(49.29% 0.02101 79.09)",
+          "oklch(60.71% 0.02101 79.09)",
+          "oklch(72.14% 0.02101 79.09)",
+          "oklch(83.57% 0.02101 79.09)",
+          "oklch(95.00% 0.02101 79.09)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "深墨",
+        "tonalRamp": [
+          "oklch(15.00% 0.01110 73.40)",
+          "oklch(26.43% 0.01110 73.40)",
+          "oklch(37.86% 0.01110 73.40)",
+          "oklch(49.29% 0.01110 73.40)",
+          "oklch(60.71% 0.01110 73.40)",
+          "oklch(72.14% 0.01110 73.40)",
+          "oklch(83.57% 0.01110 73.40)",
+          "oklch(95.00% 0.01110 73.40)"
+        ]
+      },
+      "faded-ink": {
+        "role": "neutral",
+        "displayName": "褪墨",
+        "tonalRamp": [
+          "oklch(15.00% 0.03558 65.12)",
+          "oklch(26.43% 0.03558 65.12)",
+          "oklch(37.86% 0.03558 65.12)",
+          "oklch(49.29% 0.03558 65.12)",
+          "oklch(60.71% 0.03558 65.12)",
+          "oklch(72.14% 0.03558 65.12)",
+          "oklch(83.57% 0.03558 65.12)",
+          "oklch(95.00% 0.03558 65.12)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "纸褐细线",
+        "tonalRamp": [
+          "oklch(15.00% 0.04138 73.43)",
+          "oklch(26.43% 0.04138 73.43)",
+          "oklch(37.86% 0.04138 73.43)",
+          "oklch(49.29% 0.04138 73.43)",
+          "oklch(60.71% 0.04138 73.43)",
+          "oklch(72.14% 0.04138 73.43)",
+          "oklch(83.57% 0.04138 73.43)",
+          "oklch(95.00% 0.04138 73.43)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "目录主标题",
+        "purpose": "博客目录中的 Blog 标题；手机覆盖为窄屏标题字号。"
+      },
+      "headline": {
+        "displayName": "文章主标题",
+        "purpose": "文章标题居中，允许平衡换行。"
+      },
+      "title": {
+        "displayName": "章节标题",
+        "purpose": "正文二级标题居中排列。"
+      },
+      "body": {
+        "displayName": "正文",
+        "purpose": "Garamond 与宋体组合；手机改为 16px、1.95 行高。"
+      },
+      "label": {
+        "displayName": "附属文字",
+        "purpose": "图注、表注、返回入口和页脚署名。"
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "single-column",
+        "value": "960px"
+      },
+      {
+        "name": "phone",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "页眉导航",
+      "kind": "nav",
+      "refersTo": "masthead",
+      "description": "博客纸页顶部的姓名、导航和当前项。",
+      "html": "<header class=\"ds-masthead\"><a class=\"ds-home\" href=\"#home\">Denghong Luan</a><nav aria-label=\"Main navigation\"><a href=\"#cv\">CV</a><a href=\"#blog\" aria-current=\"page\">Blog</a></nav></header>",
+      "css": ".ds-masthead{font-family:\"Blog Garamond\", \"Blog Song\", \"Songti SC\", \"Noto Serif CJK SC\", serif;color:#231f1a;background:#f4ebdd;display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:26px 0 17px;border-bottom:1px solid #9b8870;font-size:18px;line-height:1.8}.ds-home{font-size:22px;white-space:nowrap}.ds-masthead nav{display:flex;flex-wrap:wrap;gap:8px 26px;font-variant-caps:small-caps;letter-spacing:.045em}.ds-masthead a{color:inherit;text-decoration:none}.ds-masthead a[aria-current]{text-decoration:underline;text-underline-offset:.4em}.ds-masthead a:hover{color:#665443}.ds-masthead a:focus-visible{outline:2px solid #665443;outline-offset:5px;}@media(max-width:600px){.ds-masthead{display:block;padding:18px 0 15px}.ds-home{font-size:21px}.ds-masthead nav{margin-top:12px;gap:8px 22px;font-size:16px}}"
+    },
+    {
+      "name": "标题与印刷花饰",
+      "kind": "custom",
+      "description": "文章标题和复用的示例 04 花饰；此片段沿用 CC BY-SA 4.0 来源署名。",
+      "html": "<header class=\"ds-title\"><h1>计算尺使用方法</h1><svg class=\"ds-ornament\" viewBox=\"0 -5 100 10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\".35\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M0 0H40 M60 0H100 M40.67 0C45.11-6.67 48.22-6.67 50 0S54.89 6.67 59.33 0 M40.67 0C45.11 6.67 48.22 6.67 50 0S54.89-6.67 59.33 0\"/><circle cx=\"50\" cy=\"0\" r=\".52\" fill=\"currentColor\" stroke=\"none\"/></svg><p>Denghong Luan · <time datetime=\"2026-10-18\">2026.10.18</time></p></header>",
+      "css": ".ds-title{font-family:\"Blog Garamond\", \"Blog Song\", \"Songti SC\", \"Noto Serif CJK SC\", serif;color:#231f1a;background:#f4ebdd;max-width:740px;padding:48px 0 44px;text-align:center}.ds-title h1{margin:22px 0 10px;font-size:clamp(30px,4vw,44px);font-weight:500;line-height:1.5;letter-spacing:.08em;text-wrap:balance}.ds-ornament{display:block;width:210px;height:24px;margin:22px auto;overflow:visible}.ds-title p{margin:16px 0 0;font-size:16px;color:#665443}.ds-title time{font-variant-numeric:lining-nums;font-size:14px}@media(max-width:600px){.ds-title{padding:34px 0}.ds-title h1{font-size:29px;letter-spacing:.06em;margin-top:20px}.ds-title p{font-size:15px}}"
+    },
+    {
+      "name": "日期归档条目",
+      "kind": "custom",
+      "refersTo": "archive-entry",
+      "description": "目录中的月日、标题、摘要和阅读链接。",
+      "html": "<article class=\"ds-entry\"><time datetime=\"2026-10-18\">10.18</time><div><h3><a href=\"#article\">计算尺使用方法</a></h3><p>以 HEMMI No.153 竹制计算尺为例</p><a class=\"ds-read\" href=\"#article\">阅读全文</a></div></article>",
+      "css": ".ds-entry{font-family:\"Blog Garamond\", \"Blog Song\", \"Songti SC\", \"Noto Serif CJK SC\", serif;color:#231f1a;background:#f4ebdd;display:grid;grid-template-columns:44px minmax(0,1fr);gap:22px;padding-bottom:30px;font-variant-numeric:oldstyle-nums proportional-nums}.ds-entry time{font-size:17px;padding-top:5px;color:#665443}.ds-entry h3{margin:0 0 7px;font-size:24px;font-weight:500;line-height:1.7}.ds-entry p{margin:0 0 18px;font-size:16px;color:#665443}.ds-entry a{color:inherit;text-underline-offset:.22em}.ds-entry h3 a{text-decoration:none}.ds-entry h3 a:hover{text-decoration:underline}.ds-entry a:hover{color:#665443}.ds-entry a:focus-visible{outline:2px solid #665443;outline-offset:5px;}.ds-read{font-size:14px}@media(max-width:600px){.ds-entry{grid-template-columns:40px minmax(0,1fr);gap:16px}.ds-entry h3{font-size:21px}.ds-entry p{font-size:15px}}"
+    },
+    {
+      "name": "折叠章节目录",
+      "kind": "nav",
+      "refersTo": "margin-toc",
+      "description": "原生 details 与章节链接；片段可直接展开和收起。",
+      "html": "<aside class=\"ds-margin\"><details class=\"ds-toc\" open><summary>本文目录</summary><nav aria-label=\"本文目录\"><ol><li><a href=\"#scales\">刻度与结构</a></li><li><a href=\"#multiply\">乘法</a></li></ol></nav></details></aside>",
+      "css": ".ds-margin{font-family:\"Blog Garamond\", \"Blog Song\", \"Songti SC\", \"Noto Serif CJK SC\", serif;color:#231f1a;background:#f4ebdd;padding-left:20px;border-left:1px solid #9b8870}.ds-toc{font-size:12px;line-height:1.8}.ds-toc summary{font:inherit;font-size:13px;cursor:pointer;padding:4px 0 12px;letter-spacing:.12em}.ds-toc ol{list-style:none;margin:0;padding:0}.ds-toc li{margin:0 0 9px}.ds-toc a{color:inherit;text-decoration:none;display:block}.ds-toc a:hover{color:#665443;text-decoration:underline}.ds-toc a:focus-visible,.ds-toc summary:focus-visible{outline:2px solid #665443;outline-offset:5px;}@media(max-width:960px){.ds-toc ol{columns:2;column-gap:28px}.ds-toc li{break-inside:avoid}}@media(max-width:600px){.ds-toc ol{columns:1}}"
+    },
+    {
+      "name": "方框开篇首字",
+      "kind": "custom",
+      "refersTo": "opening",
+      "description": "仅用于文章开篇段落的带框下沉首字。",
+      "html": "<p class=\"ds-opening\">计算尺是一种利用对数刻度进行计算的工具。</p>",
+      "css": ".ds-opening{font-family:\"Blog Garamond\", \"Blog Song\", \"Songti SC\", \"Noto Serif CJK SC\", serif;color:#231f1a;background:#f4ebdd;font-size:18px;line-height:1.8;margin:0 0 1.2em;text-align:justify;font-variant-numeric:oldstyle-nums proportional-nums}.ds-opening::first-letter{float:left;font-size:3.25em;line-height:1.15;margin:.05em .12em 0 0;padding:0 .06em;border:1px solid #231f1a}@media(max-width:600px){.ds-opening{font-size:16px;line-height:1.95}}"
+    },
+    {
+      "name": "横线表格",
+      "kind": "custom",
+      "refersTo": "table-cell",
+      "description": "正文中的通栏表格和下方表注，窄处可横向滚动。",
+      "html": "<div class=\"ds-table\"><table><caption>正面刻度名称和用途</caption><thead><tr><th>刻度</th><th>用途</th></tr></thead><tbody><tr><td>C / D</td><td>乘法与除法</td></tr></tbody></table></div>",
+      "css": ".ds-table{font-family:\"Blog Garamond\", \"Blog Song\", \"Songti SC\", \"Noto Serif CJK SC\", serif;color:#231f1a;background:#f4ebdd;max-width:100%;overflow-x:auto;margin:2em 0}.ds-table table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.8;border-top:1px solid #231f1a;border-bottom:1px solid #231f1a}.ds-table th,.ds-table td{padding:10px 14px;text-align:left;vertical-align:top}.ds-table th{font-weight:600;border-bottom:1px solid #9b8870}.ds-table caption{caption-side:bottom;font-size:13px;text-align:center;color:#665443;padding-top:10px}@media(max-width:600px){.ds-table table{font-size:14px}.ds-table th,.ds-table td{padding:8px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "vintage-latex 古典科学印刷",
+    "overview": "博客采用用户指定的 Foadsf/vintage-latex 排版和美术方向。暖纸色、深墨色、衬线字体、细线与印刷花饰共同形成纸本文稿的阅读感。文字和图版构成主体，日期、目录和署名退居次要层次。\n\n本文件只约束 `/blog/` 目录、日期文章及其独立布局。其他页面继续使用现有 Academic Pages 设计系统；全站只新增 Blog 导航入口。博客单独加载样式，不导入全站 `main.css`。设计依据是已实现的页面、样式与本地资源，不是未实现的效果图。",
+    "keyCharacteristics": [
+      "暖纸底色、深墨正文与褐色细线。",
+      "自托管 Garamond 与中文宋体，配合旧式数字和小型大写。",
+      "居中标题、带框首字与对称印刷花饰。",
+      "按日期归档，宽屏外侧目录，窄屏正文前折叠目录。",
+      "纸墨图版预览保留原始彩色照片入口。"
+    ],
+    "rules": [
+      {
+        "name": "The Paper and Ink Rule",
+        "body": "博客页面只使用已实现的纸墨色系；原始照片的颜色保留在原图入口中。",
+        "section": "colors"
+      },
+      {
+        "name": "The Print Type Rule",
+        "body": "保留衬线字体、旧式数字、小型大写和居中章节标题的已实现分工。",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "博客组件沿用平面印刷层次，不添加浮起卡片或投影。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** 将本系统限制在独立博客布局中，其他页面继续使用 Academic Pages。",
+      "**Do** 复用本地字体、现有印刷花饰与署名，不改变它们的角色。",
+      "**Do** 保留日期、正文、目录和图注的层次，以及窄屏与键盘操作。",
+      "**Do** 为纸墨照片预览保留可访问的原始彩色 JPG 入口。"
+    ],
+    "donts": [
+      "**Don't** 将博客样式导入全站主样式或据此重排其他页面。",
+      "**Don't** 给博客加入投影卡片、圆角面板或已定义纸墨色系之外的界面强调色。",
+      "**Don't** 将预览滤镜写入用户原图，或以预览替代原图入口。",
+      "**Don't** 将未标记 `blog: true` 的旧模板文章纳入独立博客目录。"
+    ]
+  }
+}

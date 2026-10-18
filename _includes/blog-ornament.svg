@@ -1,0 +1,11 @@
+<!--
+功能概述：博客共用的印刷花饰，按 vintage-latex 的 04-ornamented-incipit.tex 路径转换为 SVG。
+主要职责：绘制两侧细线、中央对称曲线与墨点；由 blog.html、blog-post.html 和博客目录复用。
+输入输出：无参数、无脚本；作为纯装饰对辅助技术隐藏，尺寸与墨色由 blog.css 控制。
+来源：https://github.com/Foadsf/vintage-latex；Foad Sojoodi Farimani；CC BY-SA 4.0。
+改动：将 TikZ 坐标转为 SVG viewBox，并使用 currentColor 适配网页和打印。
+-->
+<svg class="blog-ornament" viewBox="0 -5 100 10" fill="none" stroke="currentColor" stroke-width=".35" aria-hidden="true" focusable="false">
+  <path d="M0 0H40 M60 0H100 M40.67 0C45.11-6.67 48.22-6.67 50 0S54.89 6.67 59.33 0 M40.67 0C45.11 6.67 48.22 6.67 50 0S54.89-6.67 59.33 0"/>
+  <circle cx="50" cy="0" r=".52" fill="currentColor" stroke="none"/>
+</svg>

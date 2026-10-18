@@ -1,0 +1,28 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+{% comment %}
+功能概述：仅为 blog:true 的文章生成 Atom 订阅，避免将模板示例文章送入博客订阅。
+主要职责：输出站点信息和最近二十篇文章的标题、链接、时间与摘要；不依赖额外 Jekyll 插件。
+代码库关系：由博客布局的 alternate 链接和 RSS 入口引用，正文仍从对应文章地址读取。
+{% endcomment %}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.author.name | xml_escape }} — Blog</title>
+  <link href="{{ '/blog/feed.xml' | absolute_url | xml_escape }}" rel="self"/>
+  <link href="{{ '/blog/' | absolute_url | xml_escape }}"/>
+  <id>{{ '/blog/' | absolute_url | xml_escape }}</id>
+  {% assign blog_posts = site.posts | where: 'blog', true %}
+  <updated>{{ blog_posts.first.date | default: site.time | date_to_xmlschema }}</updated>
+  <author><name>{{ site.author.name | xml_escape }}</name></author>
+  {% for post in blog_posts limit: 20 %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url | xml_escape }}"/>
+    <id>{{ post.url | absolute_url | xml_escape }}</id>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <summary type="html">{{ post.description | default: post.excerpt | xml_escape }}</summary>
+  </entry>
+  {% endfor %}
+</feed>

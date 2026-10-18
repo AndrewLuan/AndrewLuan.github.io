@@ -188,6 +188,8 @@ exclude:
   - local
   - scripts
   - LOCAL_PREVIEW.md
+  - PRODUCT.md
+  - DESIGN.md
   - log
   - node_modules
   - package.json*

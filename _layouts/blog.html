@@ -1,0 +1,47 @@
+---
+layout: compress
+---
+{% comment %}
+功能概述：为博客目录和文章提供独立的古典印刷页面，不继承 Academic Pages 的样式或主题脚本。
+主要职责：输出 SEO、全站导航、阅读区域和排版署名；仅在 page.math 为真时载入本地 KaTeX。
+代码库关系：由 _pages/blog.html 和 blog-post.html 使用；导航读取 _data/navigation.yml，样式只来自 blog.css。
+输入输出：读取页面的 lang、title、math 和 content；输出静态 HTML，不修改全站主题偏好或其他页面。
+{% endcomment %}
+<!doctype html>
+<html lang="{{ page.lang | default: site.locale | slice: 0, 2 }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include seo.html %}
+    <meta name="theme-color" content="#f4ebdd">
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+    <link rel="alternate" type="application/atom+xml" href="{{ '/blog/feed.xml' | relative_url }}" title="{{ site.author.name | escape }} — Blog">
+    <link rel="preload" as="font" type="font/ttf" href="{{ '/assets/fonts/blog/EBGaramond.ttf' | relative_url }}" crossorigin>
+    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
+    {% if page.math %}
+      <link rel="stylesheet" href="{{ '/assets/vendor/katex/katex.min.css' | relative_url }}">
+      <script defer src="{{ '/assets/vendor/katex/katex.min.js' | relative_url }}"></script>
+      <script defer src="{{ '/assets/vendor/katex/auto-render.min.js' | relative_url }}"></script>
+    {% endif %}
+    <script defer src="{{ '/assets/js/blog.js' | relative_url }}"></script>
+  </head>
+  <body class="vintage-blog" id="top">
+    <a class="blog-skip-link" href="#main">跳至正文</a>
+    <div class="blog-sheet">
+      <header class="blog-masthead">
+        <a class="blog-home" href="{{ '/' | relative_url }}">{{ site.author.name | escape }}</a>
+        <nav aria-label="Main navigation">
+          {% for link in site.data.navigation.main %}
+            <a href="{{ link.url | relative_url }}"{% if link.url == '/blog/' %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+          {% endfor %}
+        </nav>
+      </header>
+      <main id="main" tabindex="-1">{{ content }}</main>
+      <footer class="blog-footer">
+        {% include blog-ornament.svg %}
+        <p><a href="{{ '/blog/' | relative_url }}">Blog</a> · <a href="{{ '/blog/feed.xml' | relative_url }}">RSS</a> · <a href="#top">回到页首</a></p>
+        <p class="blog-colophon">Typesetting adapted from <a href="https://github.com/Foadsf/vintage-latex">vintage-latex</a> by Foad Sojoodi Farimani.<br>Web adaptation · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
