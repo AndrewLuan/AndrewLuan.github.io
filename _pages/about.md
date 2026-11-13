@@ -16,11 +16,10 @@ My research is primarily conducted at the **Lab for Data Science(LDS), USTC**, w
 ---
 
 ## Research Interests
-
-- **LLM Evaluation & Benchmarking** &nbsp;—&nbsp; Building contamination-free, process-level benchmarks for assessing the scientific reasoning fidelity of frontier LLMs (PPRBench, PhysGrader)
-- **AI for Science** &nbsp;—&nbsp; Applying knowledge-augmented LLMs to spectroscopy and other scientific identification tasks (Fingerprint Reasoner)
-- **Reinforcement Learning for LLMs** &nbsp;—&nbsp; Exploring GRPO with process reward signals to improve step-by-step reasoning
-- **Indoor Localization** &nbsp;—&nbsp; WiFi/CSI-based positioning via Channel State Information and simulated annealing optimization
+- **AI for Materials Science** &nbsp;—&nbsp; Applying knowledge-augmented LLMs to scientific domains
+- **Recommendation Systems:** &nbsp;—&nbsp; Persona-guided data augmentation; User simulation
+- **LLM Evaluation** &nbsp;—&nbsp; Building benchmarks for assessing the scientific reasoning fidelity of frontier LLMs
+- **Weight-Space Programming** &nbsp;—&nbsp; Exploring agent-based explanable weight adjustments of language models with interp tools
 
 ---
 
@@ -46,6 +45,7 @@ Denghong Luan, Yiheng Zhang, Chen Bin
 
 | Date | Event |
 |------|-------|
+| Nov 2026 | Oral & Poster @ ICDM 2026 |
 | Oct 2026 | Awarded the BYD Scholarship (比亚迪奖学金) |
 | Aug 2026 | Started remote internship at MIT CSAIL |
 | Feb 2026 | Awarded the **Fung Scholarship** by the Victor and William Fung Foundation (HKU) |
