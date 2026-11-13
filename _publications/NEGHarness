@@ -1,0 +1,12 @@
+---
+title: "Harness Optimization for Multi-Agent Systems Across Node, Edge, and Graph"
+collection: publications
+category: manuscripts
+permalink: /publication/NEGharness
+excerpt: ' MASH efficiently optimizes multi-agent harnesses across node, edge, and graph levels.'
+date: 2026-10-01
+venue: 'under review'
+citation: '\url{https://openreview.net/forum?id=yFJbbGKKEs}'
+---
+
+Multi-agent systems (MAS) show strong potential for complex task solving, but realizing this potential requires effective agent harnesses, which impose infrastructural constraints on execution and collaboration. Existing approaches rely on either manual design, which is labor-intensive and task-dependent, or automatic generation, which can overlook inter-agent and group-level failures, while emphasizing the individual agent harness. Effective MAS harnesses must therefore cover individual execution (i.e., node), inter-agent collaboration (i.e., edge), and group coordination (i.e., graph). However, directly extending the automatic optimization loop of failure diagnosis and constraint generation across these levels introduces two challenges: failure diagnosis duplication, where one underlying failure is repeatedly diagnosed through its propagated symptoms, and constraint candidate explosion, where numerous proposed repairs incur excessive execution costs. We propose MASH, a framework for efficient MAS harness optimization across all three levels. MASH performs structured failure diagnosis by tracing observed symptoms to shared gaps between the information a decision requires and receives, reducing redundant diagnoses and repeated repairs. It then generates coordinated cross-level constraints grounded in each diagnosed failure and applies progressively more expensive quality checks to filter weak candidates before they enter the next optimization round. Experiments across four benchmarks and four MAS topologies demonstrate that MASH consistently outperforms the evaluated baselines, supporting the effectiveness of harness optimization tailored to multi-agent execution.
