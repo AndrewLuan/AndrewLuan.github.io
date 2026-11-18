@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="208" viewBox="0 0 540 208" role="img" aria-labelledby="title">
+  <title id="title">二维谐振子第一激发能级的分裂</title>
+  <rect width="540" height="208" fill="#fff"/>
+  <g fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M78 170V28m-5 8 5-8 5 8M78 170h402m-8-5 8 5-8 5"/>
+    <path d="M72 100h6"/>
+    <path d="M78 100H426" stroke="#9ca3af" stroke-dasharray="5 5"/>
+  </g>
+  <g fill="none" stroke="#243f5a" stroke-width="2.4" stroke-linecap="round">
+    <path d="M78 100L426 48M78 100l348 52"/>
+  </g>
+  <g fill="#182432" font-family="system-ui, sans-serif" font-size="17">
+    <text x="62" y="34" text-anchor="end">E</text>
+    <text x="63" y="106" text-anchor="end">2ℏω</text>
+    <text x="78" y="192" text-anchor="middle">0</text>
+    <text x="491" y="176">λ</text>
+    <text x="440" y="54">E₊</text>
+    <text x="440" y="158">E₋</text>
+  </g>
+</svg>

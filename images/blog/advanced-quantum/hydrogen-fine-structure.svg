@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="222" viewBox="0 0 540 222" role="img" aria-labelledby="title">
+  <title id="title">氢原子 n=2 的精细结构能级</title>
+  <rect width="540" height="222" fill="#fff"/>
+  <g fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 195V29m-5 8 5-8 5 8"/>
+  </g>
+  <g fill="none" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="5 5">
+    <path d="M193 65L324 86M193 65l131 105"/>
+  </g>
+  <g fill="none" stroke="#243f5a" stroke-width="2.4" stroke-linecap="round">
+    <path d="M77 65h116M324 86h153M324 170h153"/>
+  </g>
+  <g fill="#182432" font-family="system-ui, sans-serif" font-size="17">
+    <text x="34" y="21" text-anchor="middle">E</text>
+    <text x="135" y="53" text-anchor="middle">E₂⁽⁰⁾</text>
+    <text x="400" y="72" text-anchor="middle">2P<tspan baseline-shift="sub" font-size="12">3/2</tspan></text>
+    <text x="400" y="156" text-anchor="middle">2S<tspan baseline-shift="sub" font-size="12">1/2</tspan><tspan>, 2P</tspan><tspan baseline-shift="sub" font-size="12">1/2</tspan></text>
+  </g>
+</svg>
