@@ -1,3 +1,11 @@
+/*
+ * 功能概述：定义 Academic Pages 的左右侧栏、目录以及作者资料区样式，负责这些组件在基础布局和大屏断点下的尺寸、间距与显示方式。
+ * 主要职责：.sidebar 管理侧栏容器；.toc 管理目录层级；.author__avatar、.author__content、.author__name 与 .author__urls 管理头像、姓名和资料链接；其余规则覆盖右侧栏及导航列表。
+ * 代码库关系：由 assets/css/main.scss 在主题变量、断点工具和通用 mixin 之后载入，并由 _includes/sidebar.html 与 _includes/author-profile.html 生成的类名消费；layout/_responsive.scss 最后载入并补充跨设备覆盖。
+ * 输入输出与副作用：输入为 Sass 主题变量和 $large、$x-large 等断点，输出到 Jekyll 生成的站点 CSS；只改变视觉布局，不修改作者配置或页面内容。
+ * 本次配合点：在大屏作者资料栏中扩大姓名下方留白，使随后显示的地址与姓名形成清晰的视觉分组；移动端仍沿用响应式网格间距。
+ */
+
 /* ==========================================================================
    SIDEBAR
    ========================================================================== */
@@ -190,6 +198,10 @@
 .sidebar .author__name {
   font-family: $sans-serif;
   font-size: $type-size-5;
+
+  @include breakpoint($large) {
+    margin-bottom: 1.25rem;
+  }
 }
 
 .sidebar .author__desktop {
